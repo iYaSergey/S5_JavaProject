@@ -2,7 +2,7 @@ package com.company.service;
 
 import com.company.service.interfaces.ShopServiceInterface;
 
-public class CustomerService implements ShopServiceInterface {
+public class AdminService implements ShopServiceInterface {
     @Override
     public void signIn() {
 
@@ -23,4 +23,5 @@ public class CustomerService implements ShopServiceInterface {
     public void buy() {
 
     }
+    public void deleteUser() {}
 }
