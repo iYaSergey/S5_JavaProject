@@ -22,7 +22,6 @@ abstract public class Part {
         this.count = count;
         this.isAvailable = isAvailable;
     }
-
     public String getName() {
         return name;
     }
@@ -30,7 +29,7 @@ abstract public class Part {
         try {
             this.name = name;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public String getVendor() {
@@ -40,7 +39,7 @@ abstract public class Part {
         try {
             this.vendor = vendor;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public double getFrequency() {
@@ -50,7 +49,7 @@ abstract public class Part {
         try {
             this.frequency = frequency;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public double getTdp() {
@@ -60,7 +59,7 @@ abstract public class Part {
         try {
             this.tdp = tdp;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public double getCost() {
@@ -70,7 +69,7 @@ abstract public class Part {
         try {
             this.cost = cost;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public int getCount() {
@@ -80,7 +79,7 @@ abstract public class Part {
         try {
             this.count = count;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public boolean isAvailable() {
@@ -90,7 +89,7 @@ abstract public class Part {
         try {
             this.isAvailable = isAvailable;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
 }

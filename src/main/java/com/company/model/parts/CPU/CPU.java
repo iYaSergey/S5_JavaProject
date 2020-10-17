@@ -28,7 +28,7 @@ public class CPU extends Part {
         try {
             this.cores = cores;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public int getThreads() {
@@ -38,7 +38,7 @@ public class CPU extends Part {
         try {
             this.threads = threads;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public boolean isVirtualization() {
@@ -48,7 +48,7 @@ public class CPU extends Part {
         try {
             this.virtualization = virtualization;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public boolean isHyperthreading() {
@@ -58,7 +58,7 @@ public class CPU extends Part {
         try {
             this.hyperthreading = hyperthreading;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public CPUSocket getSocket() {
@@ -68,7 +68,7 @@ public class CPU extends Part {
         try {
             this.socket = socket;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public CPUType getType() {
@@ -78,7 +78,7 @@ public class CPU extends Part {
         try {
             this.type = type;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
 }

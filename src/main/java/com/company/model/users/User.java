@@ -34,7 +34,7 @@ abstract public class User {
         try {
             this.id = id;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public String getName() {
@@ -44,7 +44,7 @@ abstract public class User {
         try {
             this.name = name;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public String getSurname() {
@@ -54,7 +54,7 @@ abstract public class User {
         try {
             this.surname = surname;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public String getEmail() {
@@ -64,7 +64,7 @@ abstract public class User {
         try {
             this.email = email;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public String getPassword() {
@@ -74,7 +74,7 @@ abstract public class User {
         try {
             this.password = password;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public String getNumber() {
@@ -84,7 +84,7 @@ abstract public class User {
         try {
             this.number = number;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public UserType getPersonType() {
@@ -94,7 +94,7 @@ abstract public class User {
         try {
             this.userType = userType;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
 }

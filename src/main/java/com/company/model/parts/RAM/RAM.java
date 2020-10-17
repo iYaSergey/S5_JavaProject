@@ -20,7 +20,7 @@ public class RAM extends Part {
         try {
             this.memory = memory;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public RAMType getType() {
@@ -30,7 +30,7 @@ public class RAM extends Part {
         try {
             this.type = type;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
 }

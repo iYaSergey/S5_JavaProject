@@ -22,7 +22,7 @@ public class GPU extends Part {
         try {
             this.memory = memory;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public boolean isRaytracing() {
@@ -32,7 +32,7 @@ public class GPU extends Part {
         try {
             this.raytracing = raytracing;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
     public GPUType getType() {
@@ -42,7 +42,7 @@ public class GPU extends Part {
         try {
             this.type = type;
         } catch (InvalidDataException e) {
-            e.toString();
+            throw new InvalidDataException();
         }
     }
 }
