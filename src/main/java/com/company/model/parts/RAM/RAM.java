@@ -2,13 +2,14 @@ package com.company.model.parts.RAM;
 
 import com.company.exceptions.InvalidDataException;
 import com.company.model.parts.Part;
+import com.company.model.parts.PartType;
 
 public class RAM extends Part {
     private int memory;
     private RAMType type;
 
     public RAM(int vendorId, String name, String vendor, double frequency, double tdp, double cost, int count, boolean isAvailable, int memory, RAMType type) {
-        super(vendorId, name, vendor, frequency, tdp, cost, count, isAvailable);
+        super(PartType.RAM, vendorId, name, vendor, frequency, tdp, cost, count, isAvailable);
         this.memory = memory;
         this.type = type;
     }

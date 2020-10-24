@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Store {
     private Map<PartType, Part> parts;
@@ -19,9 +21,20 @@ public class Store {
         parts = new HashMap<>();
         users = new HashMap<>();
     }
+    public void add(Part part) {
+        parts.put(part.getPartType(), part);
+    }
+    public void add(User user) {
+        users.put(user.getPersonType(), user);
+    }
+    public void addParts(List<Part> parts) {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        //executor.invokeAll(...)
+        executor.submit(() -> parts.forEach(part -> this.parts.put(part.getPartType(), part)));
+        executor.shutdown();
+    }
+    public void addUsers(Map<UserType, User> users) {
 
-    public void add(PartType type, Part part) {
-        parts.put(type, part);
     }
     public static Store deserialize() {
         Store store = null;

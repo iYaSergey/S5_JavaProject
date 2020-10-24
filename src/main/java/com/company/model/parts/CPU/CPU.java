@@ -2,6 +2,7 @@ package com.company.model.parts.CPU;
 
 import com.company.exceptions.InvalidDataException;
 import com.company.model.parts.Part;
+import com.company.model.parts.PartType;
 
 public class CPU extends Part {
     private int cores;
@@ -12,7 +13,7 @@ public class CPU extends Part {
     private CPUType type;
 
     public CPU(int vendorId, String name, String vendor, double frequency, double tdp, double cost, int count, boolean isAvailable, int cores, int threads, boolean virtualization, boolean hyperthreading, CPUSocket socket, CPUType type) {
-        super(vendorId, name, vendor, frequency, tdp, cost, count, isAvailable);
+        super(PartType.CPU, vendorId, name, vendor, frequency, tdp, cost, count, isAvailable);
         this.cores = cores;
         this.threads = threads;
         this.virtualization = virtualization;

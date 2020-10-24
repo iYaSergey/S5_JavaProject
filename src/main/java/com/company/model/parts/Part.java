@@ -3,6 +3,7 @@ package com.company.model.parts;
 import com.company.exceptions.InvalidDataException;
 
 abstract public class Part {
+    private PartType partType;
     private int vendorId;
     private String name;
     private String vendor;
@@ -12,7 +13,8 @@ abstract public class Part {
     private int count;
     private boolean isAvailable;
 
-    public Part(int vendorId, String name, String vendor, double frequency, double tdp, double cost, int count, boolean isAvailable) {
+    public Part(PartType partType, int vendorId, String name, String vendor, double frequency, double tdp, double cost, int count, boolean isAvailable) {
+        this.partType = partType;
         this.vendorId = vendorId;
         this.name = name;
         this.vendor = vendor;
@@ -91,5 +93,11 @@ abstract public class Part {
         } catch (InvalidDataException e) {
             throw new InvalidDataException();
         }
+    }
+    public PartType getPartType() {
+        return partType;
+    }
+    public void setPartType(PartType partType) {
+        this.partType = partType;
     }
 }

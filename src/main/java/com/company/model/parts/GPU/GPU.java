@@ -2,6 +2,7 @@ package com.company.model.parts.GPU;
 
 import com.company.exceptions.InvalidDataException;
 import com.company.model.parts.Part;
+import com.company.model.parts.PartType;
 
 public class GPU extends Part {
     private int memory;
@@ -9,7 +10,7 @@ public class GPU extends Part {
     private GPUType type;
 
     public GPU(int vendorId, String name, String vendor, double frequency, double tdp, double cost, int count, boolean isAvailable, int memory, boolean raytracing, GPUType type) {
-        super(vendorId, name, vendor, frequency, tdp, cost, count, isAvailable);
+        super(PartType.GPU, vendorId, name, vendor, frequency, tdp, cost, count, isAvailable);
         this.memory = memory;
         this.raytracing = raytracing;
         this.type = type;
