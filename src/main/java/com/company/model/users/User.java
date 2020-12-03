@@ -6,7 +6,7 @@ import com.company.model.parts.Part;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract public class User {
+public class User {
     private int id;
     private String name;
     private String surname;
@@ -87,10 +87,10 @@ abstract public class User {
             throw new InvalidDataException();
         }
     }
-    public UserType getPersonType() {
+    public UserType getUserType() {
         return userType;
     }
-    public void setPersonType(UserType userType) {
+    public void setUserType(UserType userType) {
         try {
             this.userType = userType;
         } catch (InvalidDataException e) {
