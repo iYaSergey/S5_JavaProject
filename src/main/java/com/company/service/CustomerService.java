@@ -30,8 +30,8 @@ public class CustomerService implements ShopServiceInterface {
     }
 
     @Override
-    public List<Part> findPart(Map<PartType, Part> parts, String name) {
-        return parts.values().stream()
+    public List<Part> findPart(List<Part> parts, String name) {
+        return parts.stream()
                 .filter(o -> name.equals(o.getName()))
                 .collect(Collectors.toList());
     }
