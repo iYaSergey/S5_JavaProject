@@ -1,33 +1,36 @@
 package com.company.model;
 
 import com.company.model.parts.Part;
+import com.company.model.parts.PartType;
 import com.company.model.users.User;
+import com.company.model.users.UserType;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Store {
-    private List<Part> parts;
-    private List<User> users;
+    private Map<PartType, Part> parts;
+    private Map<UserType, User> users;
 
     public Store() {
-        parts = new ArrayList<>();
-        users = new ArrayList<>();
+        parts = new HashMap<>();
+        users = new HashMap<>();
     }
 
     public void add(Part part) {
-        parts.add(part);
+        parts.put(part.getPartType(), part);
     }
     public void add(User user) {
-        users.add(user);
+        users.put(user.getUserType(), user);
     }
     public void addParts(List<Part> parts) {
         ExecutorService executor = Executors.newFixedThreadPool(2);
-        //executor.invokeAll(...)
-        executor.submit(() -> parts.forEach(part -> this.parts.add(part)));
+        executor.submit(() -> parts.forEach(part -> this.parts.put(part.getPartType(), part)));
         executor.shutdown();
     }
 

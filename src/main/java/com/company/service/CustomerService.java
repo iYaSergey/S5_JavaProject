@@ -13,15 +13,19 @@ import java.util.stream.Collectors;
 
 public class CustomerService implements ShopServiceInterface {
     private UserDaoImpl userDAO;
-    public CustomerService() throws SQLException, ClassNotFoundException {
-        userDAO = new UserDaoImpl();
+    public CustomerService() {
+        try {
+            userDAO = new UserDaoImpl();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
     @Override
     public void signIn() {
 
     }
     @Override
-    public void signUp(User user) throws SQLException {
+    public void signUp(User user) {
         userDAO.insert(user);
     }
     @Override
@@ -30,8 +34,8 @@ public class CustomerService implements ShopServiceInterface {
     }
 
     @Override
-    public List<Part> findPart(List<Part> parts, String name) {
-        return parts.stream()
+    public List<Part> findPart(Map<PartType, Part> parts, String name) {
+        return parts.values().stream()
                 .filter(o -> name.equals(o.getName()))
                 .collect(Collectors.toList());
     }

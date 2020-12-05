@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) {
         Store store = Store.deserialize();
         if (store == null) store = new Store();
 
@@ -35,7 +35,12 @@ public class Main {
                 CPUSocket.AM2, CPUType.Desktop));
         store.addParts(parts);
 
-        UserDao userDao = new UserDaoImpl();
+        UserDao userDao = null;
+        try {
+            userDao = new UserDaoImpl();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         User admin = new User(0, "Vasya", "Pupkin", "a@b.cd", "1234", "1231231", UserType.Admin);
         userDao.insert(admin);
 

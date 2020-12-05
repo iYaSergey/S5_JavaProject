@@ -12,7 +12,7 @@ public interface ShopServiceInterface {
     void signIn();
     void signUp(User user) throws SQLException;
     void addToCart();
-    List<Part> findPart(List<Part> parts, String name);
+    List<Part> findPart(Map<PartType, Part> parts, String name);
     void deleteFromCart();
     void buy();
 }
